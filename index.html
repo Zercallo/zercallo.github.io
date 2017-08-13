@@ -92,62 +92,62 @@
 
 <body>
 
-    <body>
 
-        <div id="container">
 
+    <div id="container">
+
+    </div>
+
+
+    <script type="text/babel">
+        var destination = document.querySelector("#container"); var Intro = React.createClass({ render: function() { return (
+        <div>
+            <h2>Intro</h2>
+            <p>This is fiction, but the stories are fueled by grief of real people.</p>
+            <p>All characters are imaginary any reference to anyone is accidental.</p>
         </div>
+        ); } }); var Chapter01 = React.createClass({ render: function() { return (
+        <div>
 
-
-        <script type="text/babel">
-            var destination = document.querySelector("#container"); var Intro = React.createClass({ render: function() { return (
-            <div>
-                <h2>Intro</h2>
-                <p>This is fiction, but the stories are fueled by grief of real people.</p>
-                <p>All characters are imaginary any reference to anyone is accidental.</p>
-            </div>
-            ); } }); var Chapter01 = React.createClass({ render: function() { return (
-            <div>
-
-                <iframe src="Chapter01.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0">
+            <iframe src="Chapter01.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0">
     </iframe>
 
+        </div>
+        ); } }); var Chapter02 = React.createClass({ render: function() { return (
+        <div>
+            <h2>Wanna read more?</h2>
+            <p>Paypal a starving artist
+            </p>
+        </div>
+        ); } }); var App = React.createClass({ render: function() { return (
+        <div>
+            <h1>The Ground and The Sky</h1>
+            <ul className="header">
+                <li>
+                    <IndexLink to="/" activeClassName="active">Intro</IndexLink>
+                </li>
+                <li>
+                    <Link to="/Chapter01" activeClassName="active">Chapter01</Link>
+                </li>
+                <li>
+                    <Link to="/Chapter02" activeClassName="active">Chapter02</Link>
+                </li>
+            </ul>
+            <div className="content">
+                {this.props.children}
             </div>
-            ); } }); var Chapter02 = React.createClass({ render: function() { return (
-            <div>
-                <h2>Wanna read more?</h2>
-                <p>Paypal a starving artist
-                </p>
-            </div>
-            ); } }); var App = React.createClass({ render: function() { return (
-            <div>
-                <h1>The Ground and The Sky</h1>
-                <ul className="header">
-                    <li>
-                        <IndexLink to="/" activeClassName="active">Intro</IndexLink>
-                    </li>
-                    <li>
-                        <Link to="/Chapter01" activeClassName="active">Chapter01</Link>
-                    </li>
-                    <li>
-                        <Link to="/Chapter02" activeClassName="active">Chapter02</Link>
-                    </li>
-                </ul>
-                <div className="content">
-                    {this.props.children}
-                </div>
-            </div>
-            ) } }); ReactDOM.render(
-            <Router history={hashHistory}>
-                <Route path="/" component={App}>
-                    <IndexRoute component={Intro}/>
-                    <Route path="Chapter01" component={Chapter01} />
-                    <Route path="Chapter02" component={Chapter02} />
-                </Route>
-            </Router>, destination );
-        </script>
+        </div>
+        ) } }); ReactDOM.render(
+        <Router history={hashHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Intro}/>
+                <Route path="Chapter01" component={Chapter01} />
+                <Route path="Chapter02" component={Chapter02} />
+            </Route>
+        </Router>, destination );
+    </script>
 
 
-    </body>
+</body>
 
 </html>
