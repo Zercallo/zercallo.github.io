@@ -1,7 +1,167 @@
 <!DOCTYPE html>
+
 <html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script src="./index_files/react.js.download"></script>
+    <script src="./index_files/react-dom.js.download"></script>
+    <script src="./index_files/browser.min.js.download"></script>
+    <script src="./index_files/ReactRouter.min.js.download"></script>
+
+
+
+    <style>
+        body {
+            background-color: #FDFDFD;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        h1,
+        h2,
+        p,
+        li {
+            font-family: 'Playfair Display', serif;
+            color: #2f2f2f;
+        }
+        
+        h1 {
+            text-shadow: 2px 2px #daa520;
+        }
+        
+        h2 {
+            text-shadow: 1px 1px #daa520;
+        }
+        
+        span {
+            font-size: 0.5em;
+            font-family: Comic Sans MS;
+            Font-style: oblique;
+        }
+        
+        ul {
+            text-shadow: 1px 1px #000000;
+            font-family: 'droid serif', serif;
+        }
+        
+        ul.header li {
+            display: inline;
+            list-style-type: none;
+            margin: 0;
+        }
+        
+        ul.header {
+            background-color: #000000;
+            padding: 0;
+            opacity: 0.8;
+            border: 2px solid;
+            border-radius: 15px;
+        }
+        
+        ul.header li a {
+            color: #FDFDFD;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 15px;
+        }
+        
+        .content {
+            background-color: #FDFDFD;
+            padding: 20px;
+            border: 2px solid;
+            border-radius: 15px;
+        }
+        
+        .content h2 {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .content li {
+            margin-bottom: 10px;
+        }
+        
+        .active {
+            background-color: #daa520;
+        }
+    </style>
+</head>
+
 <body>
-<h1>Test</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <div id="container">
+        <div data-reactroot="">
+            <h1>
+                <!-- react-text: 3 -->
+                <h1>The Ground and The Sky</h1>
+            </h1>
+            <ul class="header">
+                <li><a href="https://zercallo.github.io/#/" class="active">Intro</a></li>
+                <li><a href="https://zercallo.github.io/#/Chapter01">Chapter01</a></li>
+                <li><a href="https://zercallo.github.io/#/Chapter02">Chapter02</a></li>
+            </ul>
+            <div class="content">
+                <div>
+                    <h2>Intro</h2>
+                    <p>This is fiction, but the stories are fueled by grief of real people.</p>
+                    <p>All characters are imaginary any reference to anyone is accidental.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/babel">
+        var destination = document.querySelector("#container"); var { Router, Route, IndexRoute, IndexLink, hashHistory, Link } = ReactRouter; var Home = React.createClass({ render: function() { return (
+        <div>
+            <h2>Intro</h2>
+            <p>This is fiction, but the stories are fueled by grief of real people.</p>
+            <p>All characters are imaginary any reference to anyone is accidental.</p>
+        </div>
+        ); } }); var Chapter01 = React.createClass({ render: function() { return (
+        <div>
+
+            <iframe src="Chapter01.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0">
+    </iframe>
+
+        </div>
+        ); } }); var Chapter02 = React.createClass({ render: function() { return (
+        <div>
+            <h2>Wanna react-dom more?</h2>
+            <p>Paypal a starving artist
+            </p>
+        </div>
+        ); } }); var App = React.createClass({ render: function() { return (
+        <div>
+            <h1>The Ground and The Sky</h1>
+            <ul className="header">
+                <li>
+                    <IndexLink to="/" activeClassName="active">Intro</IndexLink>
+                </li>
+                <li>
+                    <Link to="/Chapter01" activeClassName="active">Chapter01</Link>
+                </li>
+                <li>
+                    <Link to="/Chapter02" activeClassName="active">Chapter02</Link>
+                </li>
+            </ul>
+            <div className="content">
+                {this.props.children}
+            </div>
+        </div>
+        ) } }); ReactDOM.render(
+        <Router history={hashHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Intro}/>
+                <Route path="Chapter01" component={Chapter01} />
+                <Route path="Chapter02" component={Chapter02} />
+            </Route>
+        </Router>, destination );
+    </script>
+
+
 </body>
+
 </html>
