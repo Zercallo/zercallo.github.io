@@ -13,7 +13,7 @@
 
     <style>
         body {
-            background-color: #FDFDFD;
+            background-color: #483C32;
             padding: 20px;
             margin: 0;
         }
@@ -23,15 +23,15 @@
         p,
         li {
             font-family: 'Playfair Display', serif;
-            color: #2f2f2f;
+            color: #FDFDFD;
         }
         
         h1 {
-            text-shadow: 2px 2px #daa520;
+            text-shadow: 2px 2px #8B0000;
         }
         
         h2 {
-            text-shadow: 1px 1px #daa520;
+            text-shadow: 1px 1px #8B0000;
         }
         
         span {
@@ -52,27 +52,30 @@
         }
         
         ul.header {
-            background-color: #000000;
+            background-color: #FDFDFD;
             padding: 0;
             opacity: 0.8;
             border: 2px solid;
             border-radius: 15px;
+            box-shadow: 10px 10px 5px black;
         }
         
         ul.header li a {
-            color: #FDFDFD;
+            color: #000000;
             font-weight: bold;
             text-decoration: none;
             padding: 20px;
             display: inline-block;
-            border-radius: 15px;
+            border-radius: 40px;
+            box-shadow: 10px 10px 5px black;
         }
         
         .content {
-            background-color: #FDFDFD;
+            background-color: #8B0000;
             padding: 20px;
             border: 2px solid;
             border-radius: 15px;
+            box-shadow: 10px 10px 5px black;
         }
         
         .content h2 {
@@ -85,7 +88,7 @@
         }
         
         .active {
-            background-color: #daa520;
+            background-color: #8B0000;
         }
     </style>
 </head>
@@ -123,8 +126,9 @@
         ) } }); var Intro = React.createClass({ render: function() { return (
         <div>
             <h2>Intro</h2>
-            <p>This is fiction, but the stories are fueled by grief of real people.</p>
-            <p>All characters are imaginary any reference to anyone is accidental.</p>
+            <p>This is a work fiction, all names, characters, and incidents portrayed are fictitious.</p>
+            <p>No identification with actual persons (living or deceased), places, buildings, and products is intended</p>
+            <p>If any are inferred, this is the result of evolutionary induced patternicity and can be rectified with medication</p>
         </div>
         ); } }); var Chapter01 = React.createClass({ render: function() { return (
         <div>
